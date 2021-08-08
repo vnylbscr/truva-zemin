@@ -1,0 +1,79 @@
+import React from 'react';
+import { Segment, Container, Grid, Header, List, Image, Divider, Icon, ListItem } from 'semantic-ui-react';
+import styled from 'styled-components';
+
+const StyledSpan = styled.a`
+   color: #fff;
+   transition: all 0.7s;
+   margin-left: 5px;
+   :hover {
+      color: limegreen;
+      cursor: pointer;
+      text-decoration: underline;
+   }
+`;
+
+const StyledIcon = styled(Icon)`
+   color: aliceblue;
+   transition: all 1s;
+   :hover {
+      color: grey;
+      cursor: pointer;
+      transform: translateY(-2px);
+   }
+`;
+
+const FOOTER_SOCIAL_MEDIAS = [
+   { url: 'https://linkedin.com/in/muhammet-gen%C3%A7-8003a092/?originalSubdomain=tr', name: 'linkedin' },
+   { url: 'https://instagram.com/mhmmtgncc/?hl=tr', name: 'instagram' },
+   { url: 'https://wa.me/+905549900997', name: 'whatsapp' },
+];
+const Footer = () => {
+   return (
+      <Segment inverted vertical style={{ padding: '5em 0em' }}>
+         <Container textAlign='center'>
+            <Grid divided inverted stackable>
+               <Grid.Column width={16}>
+                  <Header inverted as='h3' content='Truva Zemin Araştırmaları A.Ş' />
+                  <p>
+                     Copyright © {new Date().getFullYear()}
+                     <StyledSpan href='https://www.linkedin.com/in/mert-gen%C3%A7-17b93212a/'>Mert Genç</StyledSpan>
+                  </p>
+                  <p>All Rights Reserved.</p>
+               </Grid.Column>
+            </Grid>
+
+            <Divider inverted section />
+            <Image centered size='medium' src='/media/truva_appbar.jpg' />
+            <List horizontal inverted divided link size='small'>
+               <List.Item as='a' href='#'>
+                  Site Haritası
+               </List.Item>
+               <List.Item as='a' href='#'>
+                  Bize Ulaşın
+               </List.Item>
+               <List.Item as='a' href='#'>
+                  Gizlilik ve Şartlar
+               </List.Item>
+               <List.Item as='a' href='#'>
+                  Gizlilik Politikası
+               </List.Item>
+            </List>
+            <Divider />
+            <List horizontal divided>
+               {FOOTER_SOCIAL_MEDIAS.map((item) => {
+                  return (
+                     <ListItem>
+                        <a href={item.url}>
+                           <StyledIcon name={item.name} size='big' />
+                        </a>
+                     </ListItem>
+                  );
+               })}
+            </List>
+         </Container>
+      </Segment>
+   );
+};
+
+export default Footer;

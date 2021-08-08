@@ -1,0 +1,38 @@
+@import './global_variables.scss';
+
+.main {
+   width: 100%;
+   height: 100%;
+   background-color: $secondary;
+   @media (max-width: 625px) {
+      padding: 0 20px;
+   }
+   .aboutSection {
+      color: black;
+      height: 100%;
+      max-width: 700px;
+      margin: auto;
+   }
+   .listItem {
+      transition: all 1s;
+      &:hover {
+         transform: scale(1.04);
+         color: red;
+         cursor: pointer;
+      }
+   }
+   .cardContainer {
+      margin-top: 100px;
+      line-height: 24px;
+   }
+   .imgAbout {
+      width: 600px;
+      height: 300px;
+      border-radius: 20px;
+      transition: all 1s;
+      &:hover {
+         transform: scale(1.1);
+         cursor: pointer;
+      }
+   }
+}
