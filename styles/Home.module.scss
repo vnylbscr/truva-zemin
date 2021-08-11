@@ -2,8 +2,12 @@
 .main {
    background-color: $secondary;
    width: 100%;
+   padding: 10px;
+
+   
 
    .headerSection {
+      animation: fade 2s;
       width: 100%;
       display: flex;
       align-items: center;
@@ -15,6 +19,8 @@
       text-align: center;
       transition: all 1s;
       margin-top: 20px;
+      background-image: url('../public/media/bg.jpeg');
+      background-size: cover;
       @media (max-width: $media_mobile) {
          h2 {
             font-size: 4rem;
@@ -49,12 +55,7 @@
          transform: translateX(2px);
       }
    }
-   .menuItem {
-      &:hover {
-         color: orangered;
-         // border-bottom: 1px solid orangered;
-      }
-   }
+   
    .cardImage {
       .image {
          width: 300px;
@@ -64,9 +65,11 @@
 
 @keyframes fade {
    from {
-      width: 0%;
+      opacity: 0;
+      transform: scale(0.6);
    }
    to {
-      width: 100%;
+      opacity: 1;
+      transform: scale(1);
    }
 }

@@ -3,6 +3,7 @@
 .main {
    width: 100%;
    height: 100%;
+   padding: 10px;
    background-color: $secondary;
    @media (max-width: 625px) {
       padding: 0 20px;
@@ -15,6 +16,7 @@
    }
    .listItem {
       transition: all 1s;
+      margin: 10px 0px;
       &:hover {
          transform: scale(1.04);
          color: red;
@@ -26,8 +28,8 @@
       line-height: 24px;
    }
    .imgAbout {
-      width: 600px;
-      height: 300px;
+      width: 100%;
+      height: auto;
       border-radius: 20px;
       transition: all 1s;
       &:hover {

@@ -1,10 +1,11 @@
-import React, { useRef } from 'react';
-import { Menu, Grid, MenuItem, ListIcon, Ref, Sticky } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import { Menu, Grid, MenuItem, Icon, Ref, Sticky, Button } from 'semantic-ui-react';
 import classes from '../styles/Home.module.scss';
 import styled from 'styled-components';
 
 import { useRouter } from 'next/dist/client/router';
 import useWindowSize from '../hooks/useWindowSize';
+import MySideBar from './sidebar';
 const HEADER_DATA = [
    {
       label: 'Anasayfa',
@@ -59,36 +60,40 @@ const StyledNavTitle = styled.p`
 `;
 
 const AppBar = (props) => {
+   const [openSidebar, setOpenSidebar] = useState(false);
    const router = useRouter();
    const { width } = useWindowSize();
    const handleClick = (url) => {
       router.push(url);
    };
+   const handleClickMenu = () => setOpenSidebar(!openSidebar);
    return (
-      <HeaderWrapper>
+      <div>
          <Grid divided='vertically'>
-            <Grid.Row columns={2} style={{ marginTop: 20 }}>
-               <Grid.Column width={width < 630 ? 16 : 4} verticalAlign='middle' textAlign='center'>
+            <Grid.Row columns={2} style={{ marginTop: 20 }} divided>
+               <Grid.Column width={width < 625 ? 16 : 4} textAlign='center'>
                   <img className='logo' src='/media/truva_appbar.jpg' />
+                  {width < 625 && (
+                     <Button secondary onClick={handleClickMenu}>
+                        <Button.Content>
+                           <Icon name={openSidebar ? 'angle double left' : 'angle double right'} size='big' />
+                        </Button.Content>
+                     </Button>
+                  )}
                </Grid.Column>
-               <Grid.Column width={12}>
-                  <Menu
-                     secondary
-                     pointing
-                     vertical={width < 625}
-                     className={classes.header}
-                     style={{ marginLeft: width < 625 && 'auto' }}
-                  >
+               <MySideBar visible={openSidebar} handleClickMenuItem={handleClick} onClose={handleClickMenu} />
+               <Grid.Column width={12} className='appBar'>
+                  <Menu pointing secondary>
                      {HEADER_DATA.map((item) => (
                         <Menu.Item
                            active={item.url === router.pathname}
                            key={item.value}
                            onClick={() => handleClick(item.url)}
                         >
-                           <Grid relaxed className={classes.menuItem}>
+                           <Grid relaxed className='menuItem'>
                               <Grid.Row columns={2} verticalAlign='middle'>
                                  <Grid.Column width={3}>
-                                    <ListIcon name={item.icon} size='large' />
+                                    <Icon name={item.icon} size='large' />
                                  </Grid.Column>
                                  <Grid.Column width={'9'}>
                                     <StyledNavTitle>{item.label}</StyledNavTitle>
@@ -101,7 +106,7 @@ const AppBar = (props) => {
                </Grid.Column>
             </Grid.Row>
          </Grid>
-      </HeaderWrapper>
+      </div>
    );
 };
 

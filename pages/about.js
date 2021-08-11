@@ -2,9 +2,10 @@ import React, { Fragment, useEffect, useState } from 'react';
 import AppBar from '../components/appBar';
 import { Header, Segment, Divider, Container, ListItem, List, Transition, Button } from 'semantic-ui-react';
 import classes from '../styles/About.module.scss';
-import Head from 'next/dist/next-server/lib/head';
+import Head from 'next/head';
 import SupportTooltip from '../components/supportTooltip';
 import Footer from '../components/footer';
+import MyHead from '../components/head';
 
 const MOCK_DATA = [
    {
@@ -37,9 +38,7 @@ const About = () => {
 
    return (
       <Fragment>
-         <Head>
-            <title>Truva Zemin | Hakkında</title>
-         </Head>
+         <MyHead title='Truva Zemin | Hakkında' />
          <main className={classes.main}>
             <AppBar />
             <SupportTooltip size='huge' />
