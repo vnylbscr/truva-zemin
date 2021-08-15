@@ -1,5 +1,6 @@
-import Document from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import MyHead from '../components/head';
 
 export default class MyDocument extends Document {
    static async getInitialProps(ctx) {
@@ -25,5 +26,25 @@ export default class MyDocument extends Document {
       } finally {
          sheet.seal();
       }
+   }
+   render() {
+      return (
+         <Html>
+            <Head>
+               <meta name='description' content='Truva Zemin Etüt Araştırmaları Anasayfa' />
+               <meta property='og:title' content='Truva Zemin Etüt Araştırmaları | Anasayfa' />
+               <meta property='og:description' content='Truva Zemin etüt araştırmaları' />
+               <meta property='og:url' content='https://truvazemin.com/' />
+               <meta property='og:type' content='website' />
+               <meta property='og:https://truvazemin.com/' content='https://truvazemin.com/' />
+               <meta name='robots' content='index, follow' />
+               <link rel='icon' href='/favicon.ico' />
+            </Head>
+            <body>
+               <Main />
+               <NextScript />
+            </body>
+         </Html>
+      );
    }
 }

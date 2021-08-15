@@ -16,6 +16,7 @@
     "pure-react-carousel": "^1.27.6",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-google-maps": "^9.4.5",
     "react-responsive-carousel": "^3.2.20",
     "sass": "^1.37.5",
     "semantic-ui-css": "^2.4.1",

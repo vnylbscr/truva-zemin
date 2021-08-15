@@ -6,6 +6,7 @@ module.exports = withImages({
    sassOptions: {
       includePaths: [path.join(__dirname, 'styles')],
    },
+   fileExtensions: ['jpg', 'jpeg', 'png', 'gif'],
    webpack(config, options) {
       return config;
    },

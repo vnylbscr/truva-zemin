@@ -1,0 +1,60 @@
+@import './global_variables.scss';
+
+.main {
+   height: 100%;
+   background-color: $secondary;
+   width: 100%;
+   padding: 10px;
+
+   .root {
+      padding: 30px;
+      // animation: slide 2s;
+      .bottomContainer {
+         margin: 35px 0;
+      }
+   }
+   .titleContainer {
+      width: 100%;
+      color: $secondary;
+      p {
+         font-size: 32px;
+         text-transform: uppercase;
+      }
+      span {
+         font-size: 20px;
+         color: lightblue;
+         margin-bottom: 20px;
+      }
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border: 1px solid black;
+      padding: 10px;
+      @media (max-width: $media_mobile) {
+         display: none;
+      }
+      background-size: contain;
+      background-image: url('../public/media/contactimage.jpeg');
+      height: 250px;
+   }
+   .leftSection {
+   }
+   .mailSection {
+      span {
+         text-transform: uppercase;
+      }
+      .iconSection {
+         transition: all 0.4s;
+         &:hover {
+            color: black;
+            transform: scale(1.1);
+         }
+      }
+   }
+   .rightSection {
+      padding: 10px;
+      height: 100%;
+   }
+}

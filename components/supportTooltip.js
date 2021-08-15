@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Popup, Icon, Header, Label } from 'semantic-ui-react';
+import { Grid, Popup, Icon, Header, Label, Image } from 'semantic-ui-react';
 
 const SupportTooltip = ({ size }) => {
    return (
@@ -8,8 +8,8 @@ const SupportTooltip = ({ size }) => {
             <Popup
                trigger={
                   <a href='tel:+905549900997'>
-                     <Label as='a' color='blue' size={size} detail='Merto' image>
-                        <img src='https://react.semantic-ui.com/images/avatar/small/joe.jpg' />
+                     <Label color='blue' size={size} detail='Jeofizik Mühendisi' image>
+                        <Image size='huge' src='/media/profilePicture.jpeg' avatar />
                         Muhammet GENÇ
                         <Label.Detail>Jeofizik Mühendisi</Label.Detail>
                      </Label>

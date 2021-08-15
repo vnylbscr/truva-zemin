@@ -1,14 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-@font-face {
-   font-family: Lato;
-   src: url('../public/assets/fonts/LatoTR-Regular.ttf');
-}
 html,
 body {
    padding: 0;
    margin: 0;
-   font-family: Lato, 'sans-serif';
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
@@ -31,8 +27,7 @@ a {
 .logo:hover {
    transform: translateX(-4px) scale(1.1);
 }
-.appBar {
-}
+
 .menuItem:hover {
    color: orange;
 }
@@ -41,9 +36,6 @@ a {
       width: 400px;
       height: 100px;
    }
-}
-
-@media screen and (max-width: 625px) {
    .appBar {
       visibility: hidden;
    }

@@ -1,3 +1,4 @@
+import { useRouter } from 'next/dist/client/router';
 import React from 'react';
 import { Segment, Container, Grid, Header, List, Image, Divider, Icon, ListItem } from 'semantic-ui-react';
 import styled from 'styled-components';
@@ -29,6 +30,8 @@ const FOOTER_SOCIAL_MEDIAS = [
    { url: 'https://wa.me/+905549900997', name: 'whatsapp' },
 ];
 const Footer = () => {
+   const router = useRouter();
+
    return (
       <Segment inverted vertical style={{ padding: '5em 0em' }}>
          <Container textAlign='center'>
@@ -44,12 +47,12 @@ const Footer = () => {
             </Grid>
 
             <Divider inverted section />
-            <Image centered size='medium' src='/media/truva_appbar.jpg' />
+            <Image centered size='medium' src='/media/truva_appbar.jpg' alt='truva_logo' />
             <List horizontal inverted divided link size='small'>
                <List.Item as='a' href='#'>
                   Site Haritası
                </List.Item>
-               <List.Item as='a' href='#'>
+               <List.Item as='a' href='#' onClick={() => router.push('/contact')}>
                   Bize Ulaşın
                </List.Item>
                <List.Item as='a' href='#'>
@@ -60,7 +63,7 @@ const Footer = () => {
                </List.Item>
             </List>
             <Divider />
-            <List horizontal divided>
+            <List horizontal>
                {FOOTER_SOCIAL_MEDIAS.map((item) => {
                   return (
                      <ListItem>
