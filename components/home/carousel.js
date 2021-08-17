@@ -4,16 +4,14 @@ import { Header } from 'semantic-ui-react';
 import styled from 'styled-components';
 
 const StyledImage = styled.img`
-   /* width: 400px; */
-   width: auto;
-   height: 500px;
+   width: 100%;
+   height: auto;
    background-size: cover;
    max-width: 1000px;
 `;
 
 const ImageWrapper = styled.div`
    padding: 10px 20px;
-   /* border: 1px solid #eee; */
    background-color: #f1e9e5;
 `;
 const CarouselHome = () => {

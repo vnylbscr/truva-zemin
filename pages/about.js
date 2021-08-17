@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import AppBar from '../components/appBar';
-import { Header, Segment, Divider, Container, ListItem, List, Transition, Button } from 'semantic-ui-react';
+import { Header, Segment, Divider, Container, ListItem, List, Transition, Button, Image } from 'semantic-ui-react';
 import classes from '../styles/About.module.scss';
 import Head from 'next/head';
 import SupportTooltip from '../components/supportTooltip';
@@ -15,7 +15,7 @@ const MOCK_DATA = [
          '2016 yılında kurulan şirketimiz, yerleşime uygunluk etüdleri, zemin etüdleri, yeraltısuyu araştırmaları konularında faaliyet göstermektedir. Şirketimiz bugüne kadar birçok sanayi yapısı, toplu konut, konut, yüksek yapıların zemin araştırmalarını üstlenmiştir.',
    },
    {
-      image: '/media/bg.jpeg',
+      image: '/media/media02.jpeg',
       title: 'Vizyonumuz',
       content: 'Teknik ve bilimsel konuda çevresine ekonomik çözümler üreten kurumsal bir firma olmak.',
    },
@@ -45,7 +45,7 @@ const About = () => {
             <div className={classes.aboutSection}>
                {MOCK_DATA.map((item) => (
                   <Container text key={item.image} className={classes.cardContainer}>
-                     <img src={item.image} className={classes.imgAbout} />
+                     <Image src={item.image} className={classes.imgAbout} />
                      <Header as='h1'>{item.title}</Header>
                      <Divider />
                      <Header.Subheader style={{ paddingBottom: 20 }}>{item.content}</Header.Subheader>

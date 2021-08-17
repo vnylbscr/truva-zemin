@@ -20,27 +20,30 @@ const AppBar = (props) => {
    const [openSidebar, setOpenSidebar] = useState(false);
    const router = useRouter();
    const { width } = useWindowSize();
+   console.log(width);
    const handleClick = (url) => {
       router.push(url);
    };
    const handleClickMenu = () => setOpenSidebar(!openSidebar);
    return (
-      <div style={{ height: 150 }}>
-         <Grid divided='vertically'>
+      <div>
+         <Grid divided='vertically' stackable>
             <Grid.Row columns={2} style={{ marginTop: 20 }} divided>
-               <Grid.Column width={width < 625 ? 16 : 4} textAlign='center'>
+               <Grid.Column largeScreen={4} mobile={16} textAlign='center'>
                   <img onClick={() => router.push('/')} className='logo' src='/media/truva_appbar.jpg' />
-                  {width < 625 && (
-                     <Button secondary onClick={handleClickMenu}>
-                        <Button.Content>
-                           <Icon name={openSidebar ? 'angle double left' : 'angle double right'} size='big' />
-                        </Button.Content>
-                     </Button>
-                  )}
+                  <Grid verticalAlign='middle' columns={1}>
+                     <Grid.Column only='mobile' floated='left'>
+                        <Button fluid onClick={handleClickMenu} style={{ margin: '20px 0' }}>
+                           <Button.Content>
+                              <Icon name={openSidebar ? 'angle double left' : 'angle double right'} size='big' />
+                           </Button.Content>
+                        </Button>
+                     </Grid.Column>
+                  </Grid>
                </Grid.Column>
                <MySideBar visible={openSidebar} handleClickMenuItem={handleClick} onClose={handleClickMenu} />
-               <Grid.Column className='appBar' width={12}>
-                  <Menu pointing secondary>
+               <Grid.Column className='appBar' only='computer' width={12}>
+                  <Menu secondary pointing>
                      {HEADER_DATA.map((item) => (
                         <Menu.Item
                            active={item.url === router.pathname}
@@ -52,7 +55,7 @@ const AppBar = (props) => {
                                  <Grid.Column width={3}>
                                     <Icon name={item.icon} size='large' />
                                  </Grid.Column>
-                                 <Grid.Column width={5}>
+                                 <Grid.Column width={12}>
                                     <StyledNavTitle>{item.label}</StyledNavTitle>
                                  </Grid.Column>
                               </Grid.Row>

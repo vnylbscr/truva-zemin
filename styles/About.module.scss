@@ -13,6 +13,20 @@
       height: 100%;
       max-width: 700px;
       margin: auto;
+      .cardContainer {
+         margin-top: 100px;
+         line-height: 24px;
+         .imgAbout {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            transition: all 1s;
+            &:hover {
+               transform: scale(1.1);
+               cursor: pointer;
+            }
+         }
+      }
    }
    .listItem {
       transition: all 1s;
@@ -20,20 +34,6 @@
       &:hover {
          transform: scale(1.04);
          color: red;
-         cursor: pointer;
-      }
-   }
-   .cardContainer {
-      margin-top: 100px;
-      line-height: 24px;
-   }
-   .imgAbout {
-      width: 100%;
-      height: auto;
-      border-radius: 20px;
-      transition: all 1s;
-      &:hover {
-         transform: scale(1.1);
          cursor: pointer;
       }
    }

@@ -3,12 +3,12 @@ import { Grid, Popup, Icon, Header, Label, Image } from 'semantic-ui-react';
 
 const SupportTooltip = ({ size }) => {
    return (
-      <Grid>
+      <Grid stackable centered padded>
          <Grid.Column width={16} textAlign='right' style={{ marginRight: 20 }}>
             <Popup
                trigger={
                   <a href='tel:+905549900997'>
-                     <Label color='blue' size={size} detail='Jeofizik Mühendisi' image>
+                     <Label color='orange' size={size} detail='Jeofizik Mühendisi' image>
                         <Image size='huge' src='/media/profilePicture.jpeg' avatar />
                         Muhammet GENÇ
                         <Label.Detail>Jeofizik Mühendisi</Label.Detail>
