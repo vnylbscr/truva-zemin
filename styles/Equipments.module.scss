@@ -2,4 +2,14 @@
 .main {
    background-color: $secondary;
    padding: 10px;
+   height: 100%;
+   padding-bottom: 100px;
+   .imgRounded {
+      margin-top: 100px;
+      transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+      &:hover {
+         transform: scale(1.2);
+         z-index: 99;
+      }
+   }
 }

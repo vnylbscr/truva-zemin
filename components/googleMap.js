@@ -19,7 +19,7 @@ const mapElementStyle = { height: '100%' };
 export default function GoogleMaps() {
    return (
       <RegularMap
-         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDEM_8yWIiSvzwnwHq-DE7qXoswju3lgQA`}
+         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
          loadingElement={<div style={loadingElementStyle} />}
          containerElement={<div style={containerElementStyle} />}
          mapElement={<div style={mapElementStyle} />}

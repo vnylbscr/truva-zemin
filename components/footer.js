@@ -49,18 +49,11 @@ const Footer = () => {
             <Divider inverted section />
             <Image centered size='medium' src='/media/truva_appbar.jpg' alt='truva_logo' />
             <List horizontal inverted divided link size='small'>
-               <List.Item as='a' href='#'>
-                  Site Haritası
-               </List.Item>
-               <List.Item as='a' href='#' onClick={() => router.push('/contact')}>
+               <List.Item as='a'>Site Haritası</List.Item>
+               <List.Item as='a' onClick={() => router.push('/contact')}>
                   Bize Ulaşın
                </List.Item>
-               <List.Item as='a' href='#'>
-                  Gizlilik ve Şartlar
-               </List.Item>
-               <List.Item as='a' href='#'>
-                  Gizlilik Politikası
-               </List.Item>
+               <List.Item as='a'>Gizlilik Politikası</List.Item>
             </List>
             <Divider />
             <List horizontal>

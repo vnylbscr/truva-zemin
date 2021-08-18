@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Grid } from 'semantic-ui-react';
 import AppBar from '../components/appBar';
+import Footer from '../components/footer';
 import GalleryCard from '../components/gallery/card';
 import MyHead from '../components/head';
 import SupportTooltip from '../components/supportTooltip';
@@ -30,6 +31,7 @@ const Gallery = () => {
                </Grid.Row>
             </Grid>
          </div>
+         <Footer />
       </Fragment>
    );
 };
