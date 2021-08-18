@@ -1,7 +1,7 @@
 import React from 'react';
 import { List } from 'semantic-ui-react';
 
-const EquipmetsListItem = ({ item }) => {
+const EquipmetsListItem = ({ item, isListItem }) => {
    return (
       <List.Item>
          {/* <List.Icon name={item.icon} verticalAlign='middle' size='big' /> */}
