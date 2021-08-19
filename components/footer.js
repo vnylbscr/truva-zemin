@@ -39,7 +39,7 @@ const Footer = () => {
                <Grid.Column width={16}>
                   <Header inverted as='h3' content='Truva Zemin Araştırmaları A.Ş' />
                   <p>
-                     Copyright © {new Date().getFullYear()}
+                     Copyright © {new Date().getFullYear()} Build with Next.js & Sass
                      <StyledSpan href='https://www.linkedin.com/in/mert-gen%C3%A7-17b93212a/'>Mert Genç</StyledSpan>
                   </p>
                   <p>All Rights Reserved.</p>

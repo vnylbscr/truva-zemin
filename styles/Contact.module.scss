@@ -1,11 +1,7 @@
 @import './global_variables.scss';
 
 .main {
-   height: 100%;
-   background-color: $secondary;
-   width: 100%;
-   padding: 10px;
-
+   @include main;
    .root {
       padding: 30px;
       // animation: slide 2s;

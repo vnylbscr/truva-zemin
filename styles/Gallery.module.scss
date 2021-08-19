@@ -1,17 +1,12 @@
 @import './global_variables.scss';
 .main {
-   background-color: $secondary;
-   padding: 10px;
+   @include main;
+   height: 100%;
+   width: 100%;
    .cardContainer {
       padding: 20px;
       .imgMain {
-         transition: all 0.4s;
-         &:hover {
-            transform: scale(1.2);
-            z-index: 999;
-            cursor: pointer;
-            border-radius: 15px;
-         }
+         @include imageWithHover;
       }
    }
 }

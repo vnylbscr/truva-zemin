@@ -2,7 +2,7 @@ $primary: #464660;
 $secondary: #f1e9e5;
 $orange: #ffd371;
 
-$asd: 100px;
+$padding_main: 100px;
 $media_mobile: 625px;
 
 @keyframes fade {
@@ -24,5 +24,23 @@ $media_mobile: 625px;
    100% {
       opacity: 1;
       width: 100%;
+   }
+}
+
+// main for pages
+@mixin main {
+   background-color: $secondary;
+   padding: 10px;
+   height: 100%;
+   width: 100%;
+}
+
+@mixin imageWithHover {
+   transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+   width: 100%;
+   height: auto;
+   &:hover {
+      transform: scale(1.2);
+      z-index: 99;
    }
 }

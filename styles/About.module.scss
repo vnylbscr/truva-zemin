@@ -3,8 +3,7 @@
 .main {
    width: 100%;
    height: 100%;
-   padding: 10px;
-   background-color: $secondary;
+   @include main;
    @media (max-width: 625px) {
       padding: 0 20px;
    }

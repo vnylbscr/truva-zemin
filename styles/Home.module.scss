@@ -42,14 +42,8 @@
       }
    }
    .img {
-      width: auto;
+      @include imageWithHover;
       height: 600px;
-      transition: all 1s;
-      background-size: cover;
-      margin-top: 50px;
-      &:hover {
-         transform: translateX(2px);
-      }
    }
 
    .cardImage {

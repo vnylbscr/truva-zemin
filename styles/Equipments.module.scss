@@ -1,7 +1,6 @@
 @import './global_variables.scss';
 .main {
-   background-color: $secondary;
-   padding: 10px;
+   @include main;
    height: 100%;
    padding-bottom: 100px;
    .imgRounded {
