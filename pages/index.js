@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import classes from '../styles/Home.module.scss';
-import { Container, Grid, Header, Segment, Transition } from 'semantic-ui-react';
+import { Container, Grid, Header, MenuItem, Segment, Transition } from 'semantic-ui-react';
 import AppBar from '../components/appBar';
 import styled from 'styled-components';
 import { Fragment } from 'react';
