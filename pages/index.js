@@ -1,12 +1,9 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import classes from '../styles/Home.module.scss';
-import { Container, Grid, Header, MenuItem, Segment, Transition } from 'semantic-ui-react';
+import { Container, Header, Segment } from 'semantic-ui-react';
 import AppBar from '../components/appBar';
-import styled from 'styled-components';
 import { Fragment } from 'react';
 import CarouselHome from '../components/home/carousel';
-import CardHome from '../components/home/card';
 import SupportTooltip from '../components/supportTooltip';
 import Footer from '../components/footer';
 export default function Home(props) {

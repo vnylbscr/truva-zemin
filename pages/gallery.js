@@ -18,7 +18,7 @@ const Gallery = () => {
             <Grid columns={2} stackable divided className={classes.cardContainer}>
                <Grid.Row>
                   {GALLERY_DATA.map((item, index) => (
-                     <Grid.Column>
+                     <Grid.Column key={item.headerTitle + index}>
                         <GalleryCard
                            key={item.headerTitle + index}
                            description={item.description}

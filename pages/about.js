@@ -1,8 +1,7 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment } from 'react';
 import AppBar from '../components/appBar';
-import { Header, Segment, Divider, Container, ListItem, List, Transition, Button, Image } from 'semantic-ui-react';
+import { Header, Divider, Container, ListItem, List, Image } from 'semantic-ui-react';
 import classes from '../styles/About.module.scss';
-import Head from 'next/head';
 import SupportTooltip from '../components/supportTooltip';
 import Footer from '../components/footer';
 import MyHead from '../components/head';
@@ -34,8 +33,6 @@ const SERVICES_DATA = [
    'Kalite Kontrol ve Test',
 ];
 const About = () => {
-   const [state, setState] = useState(false);
-
    return (
       <Fragment>
          <MyHead title='Truva Zemin | Hakkında' />
@@ -45,7 +42,7 @@ const About = () => {
             <div className={classes.aboutSection}>
                {MOCK_DATA.map((item) => (
                   <Container text key={item.image} className={classes.cardContainer}>
-                     <Image src={item.image} className={classes.imgAbout} />
+                     <Image src={item.image} alt='Truva Zemin About' className={classes.imgAbout} />
                      <Header as='h1'>{item.title}</Header>
                      <Divider />
                      <Header.Subheader style={{ paddingBottom: 20 }}>{item.content}</Header.Subheader>
@@ -54,8 +51,10 @@ const About = () => {
                <Container text style={{ marginTop: 20, paddingBottom: 30, lineHeight: 24 }}>
                   <Header as='h1'>Hizmetlerimiz</Header>
                   <List bulleted>
-                     {SERVICES_DATA.map((item) => (
-                        <ListItem className={classes.listItem}>{item}</ListItem>
+                     {SERVICES_DATA.map((item, index) => (
+                        <ListItem key={item + index} className={classes.listItem}>
+                           {item}
+                        </ListItem>
                      ))}
                   </List>
                </Container>

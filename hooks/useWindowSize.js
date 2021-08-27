@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { isServer } from '../lib/isServer';
 
 const useWindowSize = () => {
    const [windowSize, setWindowSize] = useState({
@@ -7,7 +8,7 @@ const useWindowSize = () => {
    });
 
    useEffect(() => {
-      if (typeof window !== 'undefined') {
+      if (!isServer) {
          const handleResize = () => {
             setWindowSize({
                width: window.innerWidth,

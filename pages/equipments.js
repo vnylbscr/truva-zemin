@@ -45,20 +45,40 @@ const Equipments = () => {
                      </Header>
                      <List bulleted size='massive'>
                         {DATA.map((item) => (
-                           <List.Item as='a'>{item.title}</List.Item>
+                           <List.Item key={item.title} as='a'>
+                              {item.title}
+                           </List.Item>
                         ))}
                      </List>
                   </Grid.Column>
                   <Grid centered>
                      <Grid.Row columns={3}>
                         <Grid.Column>
-                           <Image src='/media/media07.jpeg' rounded size='large' className={classes.imgRounded} />
+                           <Image
+                              src='/media/media07.jpeg'
+                              rounded
+                              size='large'
+                              alt='truva-zemin'
+                              className={classes.imgRounded}
+                           />
                         </Grid.Column>
                         <Grid.Column>
-                           <Image src='/media/media05.png' rounded size='large' className={classes.imgRounded} />
+                           <Image
+                              src='/media/media05.png'
+                              alt='truva-zemin'
+                              rounded
+                              size='large'
+                              className={classes.imgRounded}
+                           />
                         </Grid.Column>
                         <Grid.Column>
-                           <Image src='/media/media03.jpeg' rounded size='large' className={classes.imgRounded} />
+                           <Image
+                              alt='truva-zemin'
+                              src='/media/media03.jpeg'
+                              rounded
+                              size='large'
+                              className={classes.imgRounded}
+                           />
                         </Grid.Column>
                      </Grid.Row>
                   </Grid>

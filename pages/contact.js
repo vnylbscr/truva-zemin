@@ -9,6 +9,7 @@ import classes from '../styles/Contact.module.scss';
 
 const Contact = () => {
    const { width } = useWindowSize();
+   const isSmallScreen = width < 625;
    return (
       <Fragment>
          <MyHead title='Truva Zemin Zemin Araştırmaları | Bize Ulaşın' />
@@ -62,24 +63,9 @@ const Contact = () => {
                                        >
                                           Muhammet Genç
                                        </Header.Subheader>
-                                       <Header.Subheader
-                                          className={classes.iconSection}
-                                          href='tel:0543 847 5591'
-                                          as='a'
-                                       >
-                                          Erol Köse
-                                       </Header.Subheader>
                                     </Header>
                                  </Grid.Column>
                               </Grid.Row>
-                              {/* <Grid.Row columns={2}>
-                                 <Grid.Column width={8}>
-                                    <p>Mertoski</p>
-                                 </Grid.Column>
-                                 <Grid.Column width={8}>
-                                    <p>üMertoasdasdsa</p>
-                                 </Grid.Column>
-                              </Grid.Row> */}
                            </Grid>
                         </Grid.Column>
                      </Grid.Row>
