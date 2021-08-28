@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { Menu, Grid, MenuItem, Icon, Ref, Sticky, Button } from 'semantic-ui-react';
-import classes from '../styles/Home.module.scss';
 import styled from 'styled-components';
 import { useRouter } from 'next/dist/client/router';
 import useWindowSize from '../hooks/useWindowSize';
 import MySideBar from './sidebar';
 import { HEADER_DATA } from '../data/appbarItems';
-
-const HeaderWrapper = styled.div`
-   /* height: 100px; */
-`;
+import Image from 'next/image';
 
 const StyledNavTitle = styled.p`
    font-size: 16px;
@@ -30,7 +26,12 @@ const AppBar = (props) => {
          <Grid divided='vertically' stackable>
             <Grid.Row columns={2} style={{ marginTop: 20 }} divided>
                <Grid.Column largeScreen={4} mobile={16} textAlign='center'>
-                  <img onClick={() => router.push('/')} className='logo' src='/media/truva_appbar.jpg' />
+                  <Image
+                     onClick={() => router.push('/')}
+                     alt='truva-zemin araştırmaları'
+                     className='logo'
+                     src='/media/truva_appbar.jpg'
+                  />
                   <Grid verticalAlign='middle' columns={1}>
                      <Grid.Column only='mobile' floated='left'>
                         <Button fluid onClick={handleClickMenu} style={{ margin: '20px 0' }}>

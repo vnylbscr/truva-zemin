@@ -2,6 +2,7 @@ import { useRouter } from 'next/dist/client/router';
 import React from 'react';
 import { Segment, Container, Grid, Header, List, Image, Divider, Icon, ListItem } from 'semantic-ui-react';
 import styled from 'styled-components';
+import TestComponent from './testComponent';
 
 const StyledSpan = styled.a`
    color: #fff;
@@ -57,9 +58,9 @@ const Footer = () => {
             </List>
             <Divider />
             <List horizontal>
-               {FOOTER_SOCIAL_MEDIAS.map((item) => {
+               {FOOTER_SOCIAL_MEDIAS.map((item, index) => {
                   return (
-                     <ListItem>
+                     <ListItem key={item.url + index}>
                         <a href={item.url}>
                            <StyledIcon name={item.name} size='big' />
                         </a>
@@ -68,6 +69,7 @@ const Footer = () => {
                })}
             </List>
          </Container>
+         <TestComponent />
       </Segment>
    );
 };

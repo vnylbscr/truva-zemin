@@ -9,7 +9,7 @@ const SupportTooltip = ({ size }) => {
                trigger={
                   <a href='tel:+905549900997'>
                      <Label color='orange' size={size} detail='Jeofizik Mühendisi' image>
-                        <Image size='huge' src='/media/profilePicture.jpeg' avatar />
+                        <Image size='huge' src='/media/profilePicture.jpeg' alt='Muhammet-Genç' avatar />
                         Muhammet GENÇ
                         <Label.Detail>Jeofizik Mühendisi</Label.Detail>
                      </Label>
