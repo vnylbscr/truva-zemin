@@ -6,7 +6,7 @@ import { Fragment } from 'react';
 import CarouselHome from '../components/home/carousel';
 import SupportTooltip from '../components/supportTooltip';
 import Footer from '../components/footer';
-export default function Home(props) {
+const Home = (props) => {
    return (
       <Fragment>
          <Head>
@@ -46,4 +46,6 @@ export default function Home(props) {
          <Footer />
       </Fragment>
    );
-}
+};
+
+export default Home;

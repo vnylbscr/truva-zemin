@@ -3,10 +3,11 @@ import { Header, Table } from 'semantic-ui-react';
 import { TABLE_DATA } from '../data/referencesTableData';
 import useResponsiveScreen from '../hooks/useResponsiveScreen';
 import classes from '../styles/References.module.scss';
-const ReferenceTable = () => {
+const ReferenceTable = ({ inverted }) => {
    const { isSmallScreen } = useResponsiveScreen();
+
    return (
-      <Table padded selectable singleLine size='large' className={classes.table}>
+      <Table padded inverted={inverted} selectable singleLine size='large' className={classes.table}>
          <Table.Header style={{ display: isSmallScreen ? 'none' : undefined }}>
             <Table.Row>
                <Table.HeaderCell textAlign='center' verticalAlign='middle'>
@@ -26,7 +27,7 @@ const ReferenceTable = () => {
                </Table.HeaderCell>
                <Table.HeaderCell>
                   <Header as='h1' color='orange'>
-                     Şantiye Alanı <Header.Subheader>(m2)</Header.Subheader>
+                     Şantiye Alanı <Header.Subheader style={{ color: inverted && 'white' }}>(m2)</Header.Subheader>
                   </Header>
                </Table.HeaderCell>
             </Table.Row>
@@ -50,4 +51,4 @@ const ReferenceTable = () => {
    );
 };
 
-export default ReferenceTable;
+export default React.memo(ReferenceTable);

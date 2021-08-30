@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Menu, Grid, MenuItem, Icon, Ref, Sticky, Button } from 'semantic-ui-react';
+import { Menu, Grid, Icon, Button, Image } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { useRouter } from 'next/dist/client/router';
 import useWindowSize from '../hooks/useWindowSize';
 import MySideBar from './sidebar';
 import { HEADER_DATA } from '../data/appbarItems';
-import Image from 'next/image';
 
 const StyledNavTitle = styled.p`
    font-size: 16px;
@@ -31,6 +30,7 @@ const AppBar = (props) => {
                      alt='truva-zemin araştırmaları'
                      className='logo'
                      src='/media/truva_appbar.jpg'
+                     centered
                   />
                   <Grid verticalAlign='middle' columns={1}>
                      <Grid.Column only='mobile' floated='left'>

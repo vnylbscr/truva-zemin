@@ -4,20 +4,42 @@ import { Fragment } from 'react/cjs/react.development';
 import MyHead from '../components/head';
 import AppBar from '../components/appBar';
 import SupportTooltip from '../components/supportTooltip';
-import { Header } from 'semantic-ui-react';
+import { Button, Grid, Header, Icon } from 'semantic-ui-react';
 import Footer from '../components/footer';
 import ReferenceTable from '../components/referenceTable';
 const References = () => {
+   const [inverted, setInverted] = React.useState(false);
+   const toggleInverted = React.useCallback(() => {
+      setInverted(!inverted);
+   }, [inverted]);
    return (
       <Fragment>
          <MyHead title='Truva Zemin Araştırmaları | Referanslarımız' />
          <main className={classes.main}>
             <AppBar />
             <SupportTooltip size='huge' />
-            <Header as='h1' textAlign='center' color='grey'>
-               {'Referanslarımız'.toUpperCase()}
-            </Header>
-            <ReferenceTable />
+            <Grid>
+               <Grid.Row columns='2'>
+                  <Grid.Column>
+                     <Header as='h1' textAlign='center' color='grey'>
+                        {'Referanslarımız'.toUpperCase()}
+                     </Header>
+                  </Grid.Column>
+                  <Grid.Column>
+                     <Button
+                        color='orange'
+                        floated='right'
+                        className={classes.themeButton}
+                        icon
+                        onClick={toggleInverted}
+                     >
+                        <Icon name={inverted ? 'sun' : 'moon'} className={classes.themeIcon} size='big' />
+                     </Button>
+                  </Grid.Column>
+               </Grid.Row>
+            </Grid>
+
+            <ReferenceTable inverted={inverted} />
          </main>
          <Footer />
       </Fragment>
