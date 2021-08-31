@@ -34,7 +34,7 @@ export default class MyDocument extends Document {
                <meta property='og:description' content='Truva Zemin etüt araştırmaları' />
                <meta property='og:url' content='https://truvazemin.com/' />
                <meta property='og:type' content='website' />
-               {/* <meta property='og:https://truvazemin.com/' content='https://truvazemin.com/' /> */}
+               <meta property='og:https://truvazemin.com/' content='https://truvazemin.com/' />
                <meta name='robots' content='index, follow' />
                <link rel='icon' href='/favicon.ico' />
             </Head>

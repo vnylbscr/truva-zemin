@@ -1,13 +1,13 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import { Header } from 'semantic-ui-react';
+import { Image } from 'semantic-ui-react';
 import styled from 'styled-components';
 
 const StyledImage = styled.img`
    width: 100%;
    height: auto;
    background-size: cover;
-   max-width: 1000px;
+   // max-width: 1000px;
 `;
 
 const ImageWrapper = styled.div`
@@ -16,19 +16,19 @@ const ImageWrapper = styled.div`
 `;
 const CarouselHome = () => {
    return (
-      <Carousel autoPlay infiniteLoop selectedItem={2}>
+      <Carousel dynamicHeight autoPlay infiniteLoop selectedItem={2}>
          <ImageWrapper>
-            <StyledImage src='/media/media01.png' />
+            <Image src='/media/media01.png' size='huge' />
             <p className='legend'>Jeolojik Sismik</p>
          </ImageWrapper>
          <ImageWrapper>
-            <StyledImage src='/media/media02.jpeg' />
+            <StyledImage src='/media/media02.jpeg' size='huge' />
          </ImageWrapper>
          <ImageWrapper>
-            <StyledImage src='/media/media03.jpeg' />
+            <StyledImage src='/media/media03.jpeg' size='huge' />
          </ImageWrapper>
          <ImageWrapper>
-            <StyledImage src='/media/media04.jpeg' />
+            <StyledImage rc='/media/media05.jpeg' size='huge' />
          </ImageWrapper>
       </Carousel>
    );

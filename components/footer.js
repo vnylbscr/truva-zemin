@@ -69,7 +69,6 @@ const Footer = () => {
                })}
             </List>
          </Container>
-         <TestComponent />
       </Segment>
    );
 };

@@ -6,6 +6,8 @@ import { Fragment } from 'react';
 import CarouselHome from '../components/home/carousel';
 import SupportTooltip from '../components/supportTooltip';
 import Footer from '../components/footer';
+import CarouselSlick from '../components/home/carouselSlick';
+
 const Home = (props) => {
    return (
       <Fragment>
@@ -28,7 +30,7 @@ const Home = (props) => {
                <h2>Truva Zemin & Etüt Araştırmaları</h2>
                <h4>Jeolojik Jeoteknik Etüt ve Daha Fazlası</h4>
             </div>
-            <div style={{ padding: 20 }}>
+            <div style={{ padding: 20, marginBottom: 20 }}>
                <Segment attached='top' style={{ padding: 20 }}>
                   <Header as='h1'>
                      Jeoteknik Etüt & Zemin Araştırmaları ve Daha Fazlası
@@ -38,8 +40,8 @@ const Home = (props) => {
                      </Header.Subheader>
                   </Header>
                </Segment>
-               <Segment attached='bottom'>
-                  <CarouselHome />
+               <Segment attached='bottom' padded>
+                  <CarouselSlick />
                </Segment>
             </div>
          </Container>
