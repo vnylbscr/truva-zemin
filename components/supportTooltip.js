@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Popup, Icon, Header, Label, Image } from 'semantic-ui-react';
+import { Grid, Popup, Icon, Header, Label, Image, LabelDetail } from 'semantic-ui-react';
 
 const SupportTooltip = ({ size }) => {
    return (
@@ -11,7 +11,7 @@ const SupportTooltip = ({ size }) => {
                      <Label color='orange' size={size} detail='Jeofizik Mühendisi' image>
                         <Image size='huge' src='/media/profilePicture.jpeg' alt='Muhammet-Genç' avatar />
                         Muhammet GENÇ
-                        <Label.Detail>Jeofizik Mühendisi</Label.Detail>
+                        <LabelDetail>Jeofizik Mühendisi</LabelDetail>
                      </Label>
                   </a>
                }

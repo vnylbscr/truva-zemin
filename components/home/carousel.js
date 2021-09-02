@@ -18,7 +18,7 @@ const CarouselHome = () => {
    return (
       <Carousel dynamicHeight autoPlay infiniteLoop selectedItem={2}>
          <ImageWrapper>
-            <Image src='/media/media01.png' size='huge' />
+            <Image src='/media/media01.png' size='huge' alt='truva-zemin' />
             <p className='legend'>Jeolojik Sismik</p>
          </ImageWrapper>
          <ImageWrapper>

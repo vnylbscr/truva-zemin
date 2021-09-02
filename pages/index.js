@@ -3,7 +3,6 @@ import classes from '../styles/Home.module.scss';
 import { Container, Header, Segment } from 'semantic-ui-react';
 import AppBar from '../components/appBar';
 import { Fragment } from 'react';
-import CarouselHome from '../components/home/carousel';
 import SupportTooltip from '../components/supportTooltip';
 import Footer from '../components/footer';
 import CarouselSlick from '../components/home/carouselSlick';
