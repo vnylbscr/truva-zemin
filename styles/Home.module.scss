@@ -3,6 +3,9 @@
    background-color: $secondary;
    width: 100%;
    padding: 10px;
+   @media screen and (max-width: 625px) {
+      padding: 0;
+   }
    .headerSection {
       animation: fade 2s;
       width: 100%;

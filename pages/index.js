@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import classes from '../styles/Home.module.scss';
-import { Container, Header, Segment } from 'semantic-ui-react';
+import { Header, Segment } from 'semantic-ui-react';
 import AppBar from '../components/appBar';
 import { Fragment } from 'react';
 import SupportTooltip from '../components/supportTooltip';
@@ -22,7 +22,7 @@ const Home = (props) => {
             <meta name='robots' content='index, follow' />
             <link rel='icon' href='/favicon.ico' />
          </Head>
-         <Container fluid className={classes.main}>
+         <div className={classes.main}>
             <AppBar />
             <SupportTooltip size='huge' />
             <div className={classes.headerSection}>
@@ -43,7 +43,7 @@ const Home = (props) => {
                   <CarouselSlick />
                </Segment>
             </div>
-         </Container>
+         </div>
          <Footer />
       </Fragment>
    );

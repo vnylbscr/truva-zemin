@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import classes from '../styles/References.module.scss';
-import { Fragment } from 'react/cjs/react.development';
 import MyHead from '../components/head';
 import AppBar from '../components/appBar';
 import SupportTooltip from '../components/supportTooltip';
@@ -10,8 +9,8 @@ import ReferenceTable from '../components/referenceTable';
 const References = () => {
    const [inverted, setInverted] = React.useState(false);
    const toggleInverted = React.useCallback(() => {
-      setInverted(!inverted);
-   }, [inverted]);
+      setInverted((prev) => !prev);
+   }, []);
    return (
       <Fragment>
          <MyHead title='Truva Zemin Araştırmaları | Referanslarımız' />
@@ -22,7 +21,7 @@ const References = () => {
                <Grid.Row columns='2'>
                   <Grid.Column>
                      <Header as='h1' textAlign='center' color='grey'>
-                        {'Referanslarımız'.toUpperCase()}
+                        REFERANSLARIMIZ
                      </Header>
                   </Grid.Column>
                   <Grid.Column>
@@ -38,7 +37,6 @@ const References = () => {
                   </Grid.Column>
                </Grid.Row>
             </Grid>
-
             <ReferenceTable inverted={inverted} />
          </main>
          <Footer />

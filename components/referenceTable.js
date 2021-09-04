@@ -5,12 +5,11 @@ import useResponsiveScreen from '../hooks/useResponsiveScreen';
 import classes from '../styles/References.module.scss';
 const ReferenceTable = ({ inverted }) => {
    const { isSmallScreen } = useResponsiveScreen();
-
    return (
       <Table padded inverted={inverted} selectable singleLine size='large' className={classes.table}>
          <Table.Header style={{ display: isSmallScreen ? 'none' : undefined }}>
             <Table.Row>
-               <Table.HeaderCell textAlign='center' verticalAlign='middle'>
+               <Table.HeaderCell>
                   <Header color='orange' as='h2'>
                      Yapı Adresi
                   </Header>

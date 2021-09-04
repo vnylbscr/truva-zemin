@@ -38,10 +38,20 @@ const Footer = () => {
          <Container textAlign='center'>
             <Grid divided inverted stackable>
                <Grid.Column width={16}>
-                  <Header inverted as='h3' content='Truva Zemin Araştırmaları A.Ş' />
+                  <Header inverted as='h3' content='Truva Zemin & Etüt Araştırmaları LTD ŞTİ' />
                   <p>
-                     Copyright © {new Date().getFullYear()} Build with Next.js & Sass
-                     <StyledSpan href='https://www.linkedin.com/in/mert-gen%C3%A7-17b93212a/'>Mert Genç</StyledSpan>
+                     Copyright © {new Date().getFullYear()}
+                     <StyledSpan
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        href='https://www.linkedin.com/in/mert-gen%C3%A7-17b93212a/'
+                     >
+                        Mert Genç {'\n'}{' '}
+                     </StyledSpan>
+                     Build with
+                     <StyledSpan target='_blank' rel='noopener noreferrer' href='https://nextjs.org'>
+                        Next.js
+                     </StyledSpan>
                   </p>
                   <p>All Rights Reserved.</p>
                </Grid.Column>
@@ -61,7 +71,7 @@ const Footer = () => {
                {FOOTER_SOCIAL_MEDIAS.map((item, index) => {
                   return (
                      <ListItem key={item.url + index}>
-                        <a href={item.url}>
+                        <a href={item.url} target='_blank' rel='noopener noreferrer'>
                            <StyledIcon name={item.name} size='big' />
                         </a>
                      </ListItem>

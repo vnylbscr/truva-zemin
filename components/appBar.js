@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Menu, Grid, Icon, Button, Image } from 'semantic-ui-react';
 import styled from 'styled-components';
 import { useRouter } from 'next/dist/client/router';
-import useWindowSize from '../hooks/useWindowSize';
 import MySideBar from './sidebar';
 import { HEADER_DATA } from '../data/appbarItems';
+import useResponsiveScreen from '../hooks/useResponsiveScreen';
 
 const StyledNavTitle = styled.p`
    font-size: 16px;
@@ -14,8 +14,7 @@ const StyledNavTitle = styled.p`
 const AppBar = (props) => {
    const [openSidebar, setOpenSidebar] = useState(false);
    const router = useRouter();
-   const { width } = useWindowSize();
-   console.log(width);
+   const { isSmallScreen, isMediumScreen } = useResponsiveScreen();
    const handleClick = (url) => {
       router.push(url);
    };
@@ -43,8 +42,8 @@ const AppBar = (props) => {
                   </Grid>
                </Grid.Column>
                <MySideBar visible={openSidebar} handleClickMenuItem={handleClick} onClose={handleClickMenu} />
-               <Grid.Column className='appBar' only='computer' width={12}>
-                  <Menu secondary pointing>
+               <Grid.Column className='appBar' only='computer and tablet' width={12}>
+                  <Menu inverted>
                      {HEADER_DATA.map((item) => (
                         <Menu.Item
                            active={item.url === router.pathname}

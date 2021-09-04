@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import { Grid, Image, Icon, Button } from 'semantic-ui-react';
 import { GET_ALL_MEDIA } from '../../lib/images';
-
+import classes from '../../styles/Home.module.scss';
 const CarouselSlick = () => {
    const images = GET_ALL_MEDIA();
    const settings = {
@@ -60,13 +60,48 @@ const CarouselSlick = () => {
 };
 
 const ArrowRightComponent = (props) => {
-   // const { className, style, onClick } = props;
-   return <Button primary {...props} size='large'></Button>;
+   const { className, style, onClick } = props;
+   return (
+      <Button
+         color='vk'
+         className={className}
+         style={{
+            ...style,
+            width: 40,
+            height: 40,
+            zIndex: '999',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            right: -20,
+         }}
+         icon
+         onClick={onClick}
+      >
+         {' '}
+      </Button>
+   );
 };
 
 const ArrowLeftComponent = (props) => {
-   // const { className, style, onClick } = props;
-   return <Button {...props} primary size='large'></Button>;
+   const { className, style, onClick } = props;
+   return (
+      <Button
+         onClick={onClick}
+         style={{
+            ...style,
+            width: 40,
+            height: 40,
+            zIndex: '999',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            left: -20,
+         }}
+         className={className}
+         color='vk'
+      ></Button>
+   );
 };
 
 export default CarouselSlick;
