@@ -43,7 +43,7 @@ const AppBar = (props) => {
                </Grid.Column>
                <MySideBar visible={openSidebar} handleClickMenuItem={handleClick} onClose={handleClickMenu} />
                <Grid.Column className='appBar' only='computer and tablet' width={12}>
-                  <Menu inverted>
+                  <Menu secondary pointing>
                      {HEADER_DATA.map((item) => (
                         <Menu.Item
                            active={item.url === router.pathname}
