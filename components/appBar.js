@@ -5,6 +5,7 @@ import { useRouter } from 'next/dist/client/router';
 import MySideBar from './sidebar';
 import { HEADER_DATA } from '../data/appbarItems';
 import useResponsiveScreen from '../hooks/useResponsiveScreen';
+import { MenuIcon } from './icons';
 
 const StyledNavTitle = styled.p`
    font-size: 16px;
@@ -33,10 +34,8 @@ const AppBar = (props) => {
                   />
                   <Grid verticalAlign='middle' columns={1}>
                      <Grid.Column only='mobile' floated='left'>
-                        <Button fluid onClick={handleClickMenu} style={{ margin: '20px 0' }}>
-                           <Button.Content>
-                              <Icon name={openSidebar ? 'angle double left' : 'angle double right'} size='big' />
-                           </Button.Content>
+                        <Button fluid size='medium' onClick={handleClickMenu} icon style={{ margin: '20px 0' }}>
+                           <MenuIcon />
                         </Button>
                      </Grid.Column>
                   </Grid>

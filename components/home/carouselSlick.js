@@ -2,9 +2,11 @@ import React from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import { Grid, Image, Icon, Button } from 'semantic-ui-react';
+import { Image, Grid, Icon, Button } from 'semantic-ui-react';
 import { GET_ALL_MEDIA } from '../../lib/images';
 import classes from '../../styles/Home.module.scss';
+import { ArrowLeftIcon, ArrowRightIcon } from '../icons';
+import useBoolean from '../../hooks/useBoolean';
 const CarouselSlick = () => {
    const images = GET_ALL_MEDIA();
    const settings = {
@@ -19,19 +21,19 @@ const CarouselSlick = () => {
       prevArrow: <ArrowLeftComponent />,
       responsive: [
          {
-            breakpoint: 1024,
+            breakpoint: 1200,
             settings: {
-               slidesToShow: 3,
-               slidesToScroll: 3,
+               slidesToShow: 2,
+               slidesToScroll: 2,
                infinite: true,
                dots: true,
             },
          },
          {
-            breakpoint: 600,
+            breakpoint: 1024,
             settings: {
-               slidesToShow: 2,
-               slidesToScroll: 2,
+               slidesToShow: 1,
+               slidesToScroll: 1,
                initialSlide: 2,
             },
          },
@@ -50,7 +52,7 @@ const CarouselSlick = () => {
             return (
                <Grid key={image}>
                   <Grid.Column mobile='16'>
-                     <Image size='massive' src={image} rounded alt='truva-zemin' />
+                     <Image size='huge' src={image} rounded alt='truva-zemin' />
                   </Grid.Column>
                </Grid>
             );
@@ -61,10 +63,13 @@ const CarouselSlick = () => {
 
 const ArrowRightComponent = (props) => {
    const { className, style, onClick } = props;
+   const { value, on, off } = useBoolean(false);
    return (
       <Button
          color='vk'
          className={className}
+         onMouseEnter={on}
+         onMouseLeave={off}
          style={{
             ...style,
             width: 40,
@@ -74,20 +79,25 @@ const ArrowRightComponent = (props) => {
             alignItems: 'center',
             justifyContent: 'center',
             right: -20,
+            opacity: value ? 1 : 0.3,
          }}
          icon
          onClick={onClick}
       >
-         {' '}
+         <ArrowRightIcon />
       </Button>
    );
 };
 
 const ArrowLeftComponent = (props) => {
    const { className, style, onClick } = props;
+   const { value, on, off } = useBoolean(false);
+
    return (
       <Button
          onClick={onClick}
+         onMouseEnter={on}
+         onMouseLeave={off}
          style={{
             ...style,
             width: 40,
@@ -97,10 +107,13 @@ const ArrowLeftComponent = (props) => {
             alignItems: 'center',
             justifyContent: 'center',
             left: -20,
+            opacity: value ? 1 : 0.4,
          }}
          className={className}
          color='vk'
-      ></Button>
+      >
+         <ArrowLeftIcon />
+      </Button>
    );
 };
 
