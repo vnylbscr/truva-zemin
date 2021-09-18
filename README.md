@@ -1,3 +1,5 @@
-[a link](https://truvazemin.com/
+[truvazemin.com](https://truvazemin.com)
 
 build by Mert.
+
+
