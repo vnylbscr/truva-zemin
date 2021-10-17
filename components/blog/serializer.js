@@ -1,3 +1,4 @@
+//eslint-disable
 import { Image } from 'semantic-ui-react';
 import { urlFor } from '../../lib/sanity.server';
 
