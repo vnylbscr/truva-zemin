@@ -1,8 +1,8 @@
+// Globals
 $primary: #464660;
 $secondary: #f1e9e5;
 $orange: #ffd371;
-
-$padding_main: 100px;
+$spacing: 8px;
 $media_mobile: 625px;
 
 @keyframes fade {
@@ -27,10 +27,14 @@ $media_mobile: 625px;
    }
 }
 
+@function calc_space($spacing) {
+   @return 8px * $spacing;
+}
+
 // main for pages
 @mixin main {
    background-color: $secondary;
-   padding: 10px;
+   padding: calc_space(1);
    height: 100%;
    width: 100%;
 }

@@ -1,6 +1,39 @@
 @import './global_variables.scss';
+
 .main {
    @include main;
-   height: 100vh;
+   min-height: 100vh;
    width: 100%;
+   padding-bottom: calc_space(25);
+}
+
+.blogContainerGrid {
+   padding-bottom: calc_space(8) !important;
+}
+
+.blockSingleItemContainer {
+   padding: calc_space(4) 0px !important;
+}
+
+.blockContent {
+   font-size: 18px;
+}
+
+.blogPageTitle {
+   font-size: calc_space(6);
+   color: black;
+   border-bottom: 1px solid #aaa;
+   text-align: center;
+}
+.blogContainer {
+   max-width: 800px;
+   background-color: antiquewhite;
+   height: 100%;
+}
+.backButton {
+   margin-top: calc_space(14) !important;
+}
+
+.seeMoreButton {
+   margin-top: calc_space(4) !important;
 }
