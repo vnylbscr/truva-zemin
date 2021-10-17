@@ -1,7 +1,7 @@
 import React from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 
-const defaultCenter = { lat: 41.0079534826947, lng: 29.241554748953824 };
+const defaultCenter = { lat: 41.0077718571695, lng: 29.241035052599155 };
 const defaultOptions = { scrollwheel: true };
 
 const RegularMap = withScriptjs(
