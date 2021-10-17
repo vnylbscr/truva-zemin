@@ -12,6 +12,7 @@ import Footer from '../../components/footer';
 import classes from '../../styles/Blog.module.scss';
 import moment from 'moment';
 import 'moment/locale/tr';
+import useResponsiveScreen from '../../hooks/useResponsiveScreen';
 
 const postQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
@@ -35,7 +36,7 @@ const postQuery = groq`
 const Index = (props) => {
    const router = useRouter();
    let { data, preview } = props;
-   console.log(data);
+   const { isSmallScreen } = useResponsiveScreen();
 
    return (
       <Fragment>
@@ -49,7 +50,7 @@ const Index = (props) => {
                      <Grid verticalAlign='bottom'>
                         <Grid.Row columns={2} style={{ paddingLeft: 16, padding: '32px 16px' }}>
                            <Image src={urlFor(data.post.author.image).url()} rounded size='tiny' alt='truva_zemin' />
-                           <Header as='h2' style={{ paddingLeft: 16 }}>
+                           <Header as='h2' style={{ paddingLeft: !isSmallScreen && 16 }}>
                               {data.post.author.name}
                               <Header.Subheader>
                                  {`${moment(data.post.createdAt)
@@ -68,7 +69,7 @@ const Index = (props) => {
                         </Label>
                      ))}
 
-                     <Header as='h1' style={{ fontSize: 32 }} color='orange'>
+                     <Header as='h1' style={{ fontSize: 32, wordBreak: 'break-word' }} color='orange'>
                         {data.post.title.toUpperCase()}
                      </Header>
                      <SanityBlockContent

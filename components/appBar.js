@@ -19,7 +19,9 @@ const AppBar = (props) => {
    const handleClick = (url) => {
       router.push(url);
    };
+
    const handleClickMenu = () => setOpenSidebar(!openSidebar);
+
    return (
       <div>
          <Grid divided='vertically' stackable>

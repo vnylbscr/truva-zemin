@@ -12,8 +12,8 @@ const BlogItem = ({ post }) => {
    return (
       <Grid centered className={classes.blogItem} padded stackable container verticalAlign='center'>
          <Grid.Row columns={1}>
-            <Grid.Column width={12}>
-               <Card onClick={() => route.push(`/blog/${post?.slug?.current}`)} style={{ width: '100%' }}>
+            <Grid.Column computer={12} stretched mobile={16}>
+               <Card onClick={() => route.push(`/blog/${post?.slug?.current}`)} style={{ minWidth: '100%' }}>
                   <Image src={urlFor(post?.mainImage).url()} alt='truva' wrapped ui={false} />
                   <Card.Content>
                      <Card.Header>
