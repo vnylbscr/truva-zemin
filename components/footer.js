@@ -1,8 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
 import React from 'react';
-import { Segment, Container, Grid, Header, List, Image, Divider, Icon, ListItem } from 'semantic-ui-react';
+import { Container, Divider, Grid, Header, Icon, Image, List, ListItem, Segment } from 'semantic-ui-react';
 import styled from 'styled-components';
-import TestComponent from './testComponent';
 
 const StyledSpan = styled.a`
    color: #fff;
@@ -30,6 +29,7 @@ const FOOTER_SOCIAL_MEDIAS = [
    { url: 'https://instagram.com/mhmmtgncc/?hl=tr', name: 'instagram' },
    { url: 'https://wa.me/+905549900997', name: 'whatsapp' },
 ];
+
 const Footer = () => {
    const router = useRouter();
 
@@ -47,10 +47,6 @@ const Footer = () => {
                         href='https://www.linkedin.com/in/mert-gen%C3%A7-17b93212a/'
                      >
                         Mert Genç {'\n'}{' '}
-                     </StyledSpan>
-                     Build with
-                     <StyledSpan target='_blank' rel='noopener noreferrer' href='https://nextjs.org'>
-                        Next.js
                      </StyledSpan>
                   </p>
                   <p>All Rights Reserved.</p>

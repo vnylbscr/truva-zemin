@@ -1,7 +1,11 @@
-truvazemin.com is a freelance project that I made.
+Truvazemin is a company that carries out Geophysical excavations.
+
+Technologies used:
+
+-  Next.js
+-  React
+-  Semantic - UI
+-  SCSS
+-  Jest
 
 [truvazemin.com](https://truvazemin.com)
-
-
-
-
